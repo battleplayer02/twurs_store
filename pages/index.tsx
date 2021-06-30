@@ -1,11 +1,30 @@
+import { useRecoilState } from "recoil";
+import Counter from "../components/Counter";
+import Text from "../components/Text";
+import { lengthAtom, textAtom } from "../state/state";
 
 export default function Home() {
+  const [length, setLength] = useRecoilState(lengthAtom)
+  const [text, setText] = useRecoilState(textAtom)
+
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+    setLength(e.target.value.length);
+  }
   return (
-    <>
-      <h1 className="text-green-400">Hello</h1>
-      <button className="px-4 py-2 font-semibold text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700">
-        Click me
-      </button>
-    </>
+    <div className="flex flex-col justify-center text-center border-4 border-gray-700 m-7 ">
+      <h1>Type Something</h1>
+      <input
+        style={{ textAlign: "center" }}
+        type="text"
+        value={text}
+        className='border-2 border-black hover:bg-gray-600 hover:text-gray-100'
+        onChange={handleChange}
+        placeholder="Write Something"
+      />
+      <Counter />
+      <Text />
+    </div>
   )
 }
