@@ -23,27 +23,34 @@ const Product = (props: { productDetails: ProductType }) => {
 
 
     const addtoCart = () => {
-        setcart([...cart, { ...productDetails, quantity }])
-        console.log(cart);
-
+        let flag = true;
+        let oldItems: Array<ProductType> = cart.map((item: ProductType) => {
+            if (item._id === productDetails._id) {
+                flag = false;
+                return { ...item, quantity, price: item.price * quantity }
+            } else {
+                return { ...item }
+            }
+        });
+        setcart(flag ? [...cart, { ...productDetails, quantity, price: productDetails.price * quantity }] : oldItems)
     }
 
 
 
     return (
-        <div className="w-full p-4 sm:w-1/2 md:w-1/2 xl:w-1/4">
+        <div className="p-3 sm:w-1/2 md:w-1/2 xl:w-1/4">
             <div className="block overflow-hidden bg-white rounded-lg shadow-md c-card hover:shadow-xl">
-                <div className="relative pb-48 overflow-hidden">
+                <div className="relative pb-32">
                     <img className="product-image" src={productDetails.image} alt="" />
                 </div>
-                <div className="p-4">
+                <div className="p-3">
                     <h2 className="mt-2 mb-2 font-bold">{productDetails.name}</h2>
                     <p className="text-sm">{productDetails.description}</p>
                     <div className="flex items-center mt-3">
                         <span className="text-lg font-semibold">₹</span>&nbsp;<span className="text-lg font-bold">{productDetails.price}</span>
                     </div>
                 </div>
-                <div className="flex items-center justify-between w-full p-4 text-xs text-gray-700 border-t border-b">
+                <div className="flex items-center justify-between w-full p-3 text-xs text-gray-700 border-t border-b">
                     <span className="flex items-center justify-between mb-1">
                         <span>Quantity: {productDetails.quantity}</span>
                     </span>
@@ -54,7 +61,7 @@ const Product = (props: { productDetails: ProductType }) => {
                     </span>
 
                 </div>
-                <div className="w-full p-4 border-t border-b">
+                <div className="w-full p-3 border-t border-b">
                     <button className="w-full px-4 py-2 font-semibold text-blue-700 border border-b-4 border-blue-500 rounded "
                         onClick={addtoCart}>
                         Add To Cart
