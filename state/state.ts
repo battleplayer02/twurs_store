@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { Product } from "../types/types";
 
 
 export const textAtom = atom(
@@ -14,3 +15,11 @@ export const lengthAtom = atom(
         default: 0
     }
 );
+
+let p: (Product[])[] = [];
+export const cartAtom = atom(
+    {
+        key: "cartitems",
+        default: p
+    }
+)
