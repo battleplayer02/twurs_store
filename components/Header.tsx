@@ -1,7 +1,10 @@
 import { useState } from "react"
 import Link from 'next/link'
+import { totalitems } from "../state/state";
+import { useRecoilValue } from "recoil";
 const Header = () => {
 
+    const count = useRecoilValue(totalitems);
     const [toggle, settoggle] = useState<boolean>(false)
 
     function toggleMenu() {
@@ -29,7 +32,7 @@ const Header = () => {
                                 <Link href="/cart">
                                     <a className="relative px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
                                         Cart
-                                        <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full -right-2">1</span>
+                                        <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full -right-2">{count}</span>
                                     </a>
                                 </Link>
                             </div>
@@ -72,7 +75,7 @@ const Header = () => {
                     </a>
                     <a className="relative block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
                         Cart
-                        <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full left-12">1</span>
+                        <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full left-12">{count}</span>
                     </a>
                 </div>
             </div>

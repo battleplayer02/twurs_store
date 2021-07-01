@@ -1,31 +1,35 @@
 import React from 'react'
+import { useRecoilState } from 'recoil';
+import { cartAtom } from '../state/state';
 
-export default function CartItem() {
+import { Product } from "../types/types";
+
+export default function CartItem({ item }) {
+    const [cart, setcart] = useRecoilState(cartAtom)
+
+
+    const deleteItem = () => {
+
+        setcart(cart.filter((cartItem: Product) => item._id !== cartItem._id))
+    }
+
+
     return (
         <div className="flex items-center px-6 py-5 -mx-8 hover:bg-gray-100">
             <div className="flex w-2/5">
                 <div className="w-20">
-                    <img className="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt="" />
+                    <img className="h-20" src={item.image} alt="" />
                 </div>
-                <div className="flex flex-col justify-between flex-grow ml-4">
-                    <span className="text-sm font-bold">Iphone 6S</span>
-                    <span className="text-xs text-red-500">Apple</span>
-                    <a href="#" className="text-xs font-semibold text-gray-500 hover:text-red-500">Remove</a>
+                <div className="flex flex-col justify-between flex-grow ml-7">
+                    <span className="text-sm font-bold">{item.name}</span>
+                    <button className="w-1/2 p-2 border border-red-500 rounded hover:text-white hover:bg-red-500 " onClick={deleteItem}>Remove</button>
                 </div>
             </div>
             <div className="flex justify-center w-1/5">
-                <svg className="w-3 text-gray-600 fill-current" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
-
-                <input className="w-8 mx-2 text-center border" type="text" value="1" />
-
-                <svg className="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
-                    <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
+                {item.quantity}
             </div>
-            <span className="w-1/5 text-sm font-semibold text-center">$400.00</span>
-            <span className="w-1/5 text-sm font-semibold text-center">$400.00</span>
+            <span className="w-1/5 text-sm text-center">₹{item.price}</span>
+            <span className="w-1/5 text-sm text-center">₹{item.price * item.quantity}</span>
         </div>
-
     )
 }
