@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import Link from 'next/link'
 const Header = () => {
 
     const [toggle, settoggle] = useState<boolean>(false)
@@ -18,16 +18,20 @@ const Header = () => {
                         </div>
                         <div className="hidden md:block">
                             <div className="flex ml-10 space-x-4">
-                                <a className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
-                                    Shop
-                                </a>
+                                <Link href="/shop">
+                                    <a className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
+                                        Shop
+                                    </a>
+                                </Link>
                                 <a className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
                                     Login
                                 </a>
-                                <a className="relative px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
-                                    Cart
-                                    <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full -right-2">1</span>
-                                </a>
+                                <Link href="/cart">
+                                    <a className="relative px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
+                                        Cart
+                                        <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full -right-2">1</span>
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

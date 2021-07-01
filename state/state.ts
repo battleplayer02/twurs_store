@@ -16,7 +16,7 @@ export const lengthAtom = atom(
     }
 );
 
-let p: (Product[])[] = [];
+let p: (Product)[] = [];
 export const cartAtom = atom(
     {
         key: "cartitems",

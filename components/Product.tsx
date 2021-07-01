@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+import { useRecoilState } from 'recoil';
+
+import { cartAtom } from '../state/state';
 import { Product as ProductType } from "../types/types";
+
+
+
+
 const Product = (props: { productDetails: ProductType }) => {
     const { productDetails } = props;
     // console.log(productDetails);
     const [quantity, setquantity] = useState<number>(1);
-
-
+    const [cart, setcart] = useRecoilState(cartAtom)
 
 
 
@@ -17,6 +23,8 @@ const Product = (props: { productDetails: ProductType }) => {
 
 
     const addtoCart = () => {
+        setcart([...cart, { ...productDetails, quantity }])
+        console.log(cart);
 
     }
 
@@ -47,7 +55,8 @@ const Product = (props: { productDetails: ProductType }) => {
 
                 </div>
                 <div className="w-full p-4 border-t border-b">
-                    <button className="w-full px-4 py-2 font-semibold text-blue-700 border border-b-4 border-blue-500 rounded " onClick={addtoCart}>
+                    <button className="w-full px-4 py-2 font-semibold text-blue-700 border border-b-4 border-blue-500 rounded "
+                        onClick={addtoCart}>
                         Add To Cart
                     </button>
                 </div>
