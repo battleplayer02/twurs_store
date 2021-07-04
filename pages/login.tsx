@@ -48,6 +48,11 @@ export default function login() {
         <>
             {loading ? <h1>Please Wait.....Loading</h1> : user == null ?
                 <div className="flex flex-col items-center justify-center p-4 md:px-80">
+                    <header >
+                        <h1 className="text-2xl text-center text-indigo-700 hover:underline ">
+                            Login
+                        </h1>
+                    </header>
                     <form className="w-full ">
                         <div>
                             <label htmlFor="username" className={"block mb-2 text-indigo-500"}>
