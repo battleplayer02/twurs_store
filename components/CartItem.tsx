@@ -4,7 +4,8 @@ import { cartAtom } from '../state/state';
 
 import { Product } from "../types/types";
 
-export default function CartItem<Object>({ item }) {
+export default function CartItem(props: { item: Product }) {
+    const { item } = props;
     const [cart, setcart] = useRecoilState(cartAtom)
 
 
