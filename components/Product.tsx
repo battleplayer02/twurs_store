@@ -46,8 +46,13 @@ const Product = (props: { productDetails: ProductType }) => {
                 <div className="p-3">
                     <h2 className="mt-2 mb-2 font-bold">{productDetails.name}</h2>
                     <p className="text-sm">{productDetails.description}</p>
-                    <div className="flex items-center mt-3">
-                        <span className="text-lg font-semibold">₹</span>&nbsp;<span className="text-lg font-bold">{productDetails.price}</span>
+                    <div className="flex items-center justify-between mt-3">
+                        <span className="px-2 py-1 text-white bg-yellow-600 rounded">
+                            ₹{productDetails.price}
+                        </span>
+                        <span className="px-2 py-1 text-white bg-green-600 rounded">
+                            {productDetails.type}
+                        </span>
                     </div>
                 </div>
                 <div className="flex items-center justify-between w-full p-3 text-xs text-gray-700 border-t border-b">
@@ -62,7 +67,7 @@ const Product = (props: { productDetails: ProductType }) => {
 
                 </div>
                 <div className="w-full p-3 border-t border-b">
-                    <button className="w-full px-4 py-2 font-semibold text-blue-700 border border-b-4 border-blue-500 rounded "
+                    <button className="w-full px-4 py-2 font-semibold text-blue-700 border border-b-4 border-blue-500 rounded hover:text-white hover:bg-blue-700"
                         onClick={addtoCart}>
                         Add To Cart
                     </button>

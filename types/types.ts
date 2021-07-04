@@ -5,6 +5,7 @@ export interface Product {
     quantity: number
     description: string
     price: number
+    type: string
 }
 
 export let Cart: Array<Product>

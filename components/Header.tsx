@@ -26,9 +26,11 @@ const Header = () => {
                                         Shop
                                     </a>
                                 </Link>
-                                <a className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
-                                    Login
-                                </a>
+                                <Link href="/login">
+                                    <a className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
+                                        Login
+                                    </a>
+                                </Link>
                                 <Link href="/cart">
                                     <a className="relative px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">
                                         Cart
@@ -65,18 +67,24 @@ const Header = () => {
             </div>
             {toggle && <div className="md:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a
-                        className="block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
-                        Shop
-                    </a>
-                    <a
-                        className="block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
-                        Login
-                    </a>
-                    <a className="relative block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
-                        Cart
-                        <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full left-12">{count}</span>
-                    </a>
+                    <Link href="/shop">
+                        <a
+                            className="block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
+                            Shop
+                        </a>
+                    </Link>
+                    <Link href="/login">
+                        <a
+                            className="block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
+                            Login
+                        </a>
+                    </Link>
+                    <Link href="/cart">
+                        <a className="relative block px-3 py-2 font-medium text-white rounded-md hover:bg-gray-700">
+                            Cart
+                            <span className="absolute bottom-0 flex items-center justify-center w-5 h-5 p-1 text-xs leading-5 text-center bg-red-600 rounded-full left-12">{count}</span>
+                        </a>
+                    </Link>
                 </div>
             </div>
             }

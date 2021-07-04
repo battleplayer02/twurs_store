@@ -14,7 +14,7 @@ export default function cart() {
 
     return (
 
-        <div className="container px-5 mx-auto mt-10">
+        <div className="px-5 ">
             <div className="my-10 shadow-md md:flex ">
                 <div className="px-10 py-10 bg-white md:w-3/4">
                     <div className="flex justify-between pb-8 border-b">
@@ -45,7 +45,7 @@ export default function cart() {
                             <span>Total cost</span>
                             <span>₹ {price}</span>
                         </div>
-                        <button className="w-full py-3 text-sm text-white uppercase bg-gray-800 hover:bg-gray-600">Checkout</button>
+                        <button className="w-full py-3 text-sm text-white uppercase bg-gray-800 rounded hover:bg-gray-600">Checkout</button>
                     </div>
                 </div>
 

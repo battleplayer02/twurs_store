@@ -9,7 +9,8 @@ const products: Product[] = [
         image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
         quantity: 10,
         description: "Lorem ipsum dolor sit m amet laudantium ipsum! Blanditiis beatae consequuntur molestiae laboriosam explicabo. Nam aliquid repellat illum. Eligendi quis  ",
-        price: 10
+        price: 10,
+        type: "Type 1"
     },
     {
         _id: "2",
@@ -17,7 +18,8 @@ const products: Product[] = [
         image: "https://lh3.googleusercontent.com/ogw/ADea4I4qqLBtGT5xGk1NoEb7yyaiBAsDU86kRDGLrCb9yA=s83-c-mo",
         quantity: 5,
         description: "Lorem ipsum dolor sit m amet laudantium ipsum! Blanditiis beatae consequuntur molestiae laboriosam explicabo. Nam aliquid repellat illum. Eligendi quis  ",
-        price: 10
+        price: 10,
+        type: "Type 2"
     },
     {
         _id: "3",
@@ -25,7 +27,8 @@ const products: Product[] = [
         image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
         quantity: 8,
         description: "Lorem ipsum dolor sit m amet laudantium ipsum! Blanditiis beatae consequuntur molestiae laboriosam explicabo. Nam aliquid repellat illum. Eligendi quis  ",
-        price: 10.32
+        price: 10.32,
+        type: "Type 3"
     },
     {
         _id: "4",
@@ -33,7 +36,8 @@ const products: Product[] = [
         image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
         quantity: 8,
         description: "Lorem ipsum dolor sit m amet laudantium ipsum! Blanditiis beatae consequuntur molestiae laboriosam explicabo. Nam aliquid repellat illum. Eligendi quis  ",
-        price: 10.32
+        price: 10.32,
+        type: "Type 4"
     },
     {
         _id: "5",
@@ -41,7 +45,17 @@ const products: Product[] = [
         image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
         quantity: 8,
         description: "Lorem ipsum dolor sit m amet laudantium ipsum! Blanditiis beatae consequuntur molestiae laboriosam explicabo. Nam aliquid repellat illum. Eligendi quis  ",
-        price: 10.32
+        price: 10.32,
+        type: "Type 5",
+    },
+    {
+        _id: "6",
+        name: "Laptop 5",
+        image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        quantity: 8,
+        description: "Lorem ipsum dolor sit m amet laudantium ipsum! Blanditiis beatae consequuntur molestiae laboriosam explicabo. Nam aliquid repellat illum. Eligendi quis  ",
+        price: 10.32,
+        type: "Type 6",
     },
 ];
 
